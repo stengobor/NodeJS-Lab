@@ -1,10 +1,37 @@
-let path = require('path');
-let fs = require('fs');
+import { join } from "path";
+import { readFile } from "fs";
 
-let dataPath = path.join(__dirname, '.../data.json');
+// let dataPath = join(__dirname, ".../data.json");
 
-fs.readFile(dataPath, {
-    encoding: 'UTF-8'
-}, (err, data) => {
-    console.log(data);
-});
+let chirps = [
+  {
+    name: "Sofi",
+    text: "I'm saying random things because I need to.",
+  },
+  {
+    name: "Rich",
+    text: "You're my favorite person.",
+  },
+  {
+    name: "MoMo",
+    text: "Ruff, ruff",
+  },
+  {
+    name: "JoJo",
+    text: "Yeah",
+  },
+  {
+    name: "Bo",
+    text: "blah blah",
+  },
+];
+
+readFile(
+  chirps,
+  {
+    encoding: "UTF-8",
+  },
+  (err, chirp) => {
+    console.log(chirp);
+  }
+);
