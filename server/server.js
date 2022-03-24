@@ -1,7 +1,7 @@
 import { join } from "path";
 import { readFile } from "fs";
 
-// let dataPath = join(__dirname, ".../data.json");
+let dataPath = join(__dirname, ".../data.json");
 
 let chirps = [
   {
@@ -27,7 +27,7 @@ let chirps = [
 ];
 
 readFile(
-  chirps,
+  dataPath, chirps,
   {
     encoding: "UTF-8",
   },
